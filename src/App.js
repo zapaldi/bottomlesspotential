@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Building a Better Mouse Trap in the Cloud</p>
+        <p>Where We Are Learning To Build a Better Mouse Trap using the Cloud</p>
       </header>
     </div>
   );
