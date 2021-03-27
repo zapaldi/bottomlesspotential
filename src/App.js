@@ -1,13 +1,14 @@
 import React from 'react'
 import './App.css';
 import TodoCategory from './TodoCategory/todoCategory'
+import AddCategory from './AddCategory/addCategory'
 
 class App extends React.Component {
   
   constructor() {
     super();
     this.state = {
-      todos: []
+      categories: []
     }
     
   }
@@ -15,22 +16,20 @@ class App extends React.Component {
   render() {
     return ( 
        <div> 
-        {
-            4 * 8
-        }
+            <AddCategory></AddCategory>
        </div> 
     );
   }
   
   componentDidMount = () => {
-    const todos = localStorage.getItem('todos')
+    const categories = localStorage.getItem('categroies')
     
-    if ( todos ) {
-        const savedTodos = JSON.parse ( todos )
-        this.setState ({ todos: savedTodos} )
-        console.log ( todos )  
+    if ( categories ) {
+        const savedCategories = JSON.parse ( categories )
+        this.setState ({ categories: savedCategories} )
+        console.log ( categories )  
     } else {
-        console.log ("No todos")  
+        console.log ("No categories")  
     }
     
   }
