@@ -1,10 +1,13 @@
+import React from 'react'
 import './App.css';
 import TodoCategory from './TodoCategory/todoCategory'
 
-function App() {
-  return (
-    <TodoCategory></TodoCategory>
-  );
+class App extends React.Component {
+  render() {
+    return ( 
+       <div> <TodoCategory></TodoCategory> </div> 
+    );
+  }
 }
 
 export default App;
