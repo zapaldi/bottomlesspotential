@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Every Journey Begins with Just One Step</p>
+        <p>Learning Step By Step, Practicing Patience and learning to Enjoy the Journey</p>
       </header>
     </div>
   );
