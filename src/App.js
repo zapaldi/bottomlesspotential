@@ -10,13 +10,12 @@ class App extends React.Component {
     this.state = {
       categories: []
     }
-    
   }
   
   render() {
     return ( 
        <div> 
-            <AddCategory></AddCategory>
+            <AddCategory addCategoryFn={this.addCategory} ></AddCategory>
        </div> 
     );
   }
@@ -34,6 +33,35 @@ class App extends React.Component {
     
   }
   
+  addCategory = async ( category ) => {
+    await this.setState ({ categories: [...this.state.categories, category] })
+    localStorage.setItem( 'categories', JSON.stringify(this.state.categories) )
+    console.log ('In addCategory function, this.state.categories are: ', this.state.categories)
+    console.log ('In addCategory function, localStorage.categories are: ', localStorage.getItem('categories') )
+  }
+
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

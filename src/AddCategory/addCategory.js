@@ -1,14 +1,34 @@
 import React from 'react';
 
 class AddCategory extends React.Component {
-    
+
+    constructor() {
+        super();
+        this.state = {
+            category: ''
+        }
+    }
+
     render() {
         return (
-            <div>Hello from AddCategory</div>
+            <div className='addCategoryContainer' >
+                <form onSubmit={ (e) => this.submitTodo(e) } >
+                    <input  onChange={ (e) => this.updateInput(e) } type='text' ></input>
+                    <button type='submit'>Add Category</button>
+                </form>
+            </div>
         )
             
     }
-
+    
+    updateInput = (e) => {
+        this.setState ({ category: e.target.value })
+    }
+    
+    submitTodo = (e) => {
+        e.preventDefault();
+        this.props.addCategoryFn(this.state.category)
+    }
 }
 
 export default AddCategory;
