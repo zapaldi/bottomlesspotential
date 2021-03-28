@@ -16,7 +16,7 @@ class App extends React.Component {
     return ( 
        <div> 
             <AddCategory addCategoryFn={this.addCategory} ></AddCategory>
-            <ListCategories></ListCategories>
+            <ListCategories categories={this.state.categories}></ListCategories>
        </div> 
     );
   }
@@ -35,10 +35,12 @@ class App extends React.Component {
   }
   
   addCategory = async ( category ) => {
-    await this.setState ({ categories: [...this.state.categories, category] })
+    await this.setState ({ categories: [...this.state.categories, {
+      text: category,
+      completed: false
+    }] })
     localStorage.setItem( 'categories', JSON.stringify(this.state.categories) )
     console.log ('In addCategory function, this.state.categories are: ', this.state.categories)
-    console.log ('In addCategory function, localStorage.categories are: ', localStorage.getItem('categories') )
   }
 
 }
