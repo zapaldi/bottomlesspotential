@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
-import TodoCategory from './TodoCategory/todoCategory'
 import AddCategory from './AddCategory/addCategory'
+import ListCategories from './ListCategories/listCategories.js'
 
 class App extends React.Component {
   
@@ -16,6 +16,7 @@ class App extends React.Component {
     return ( 
        <div> 
             <AddCategory addCategoryFn={this.addCategory} ></AddCategory>
+            <ListCategories></ListCategories>
        </div> 
     );
   }

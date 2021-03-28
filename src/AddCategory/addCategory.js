@@ -13,7 +13,7 @@ class AddCategory extends React.Component {
         return (
             <div className='addCategoryContainer' >
                 <form onSubmit={ (e) => this.submitTodo(e) } >
-                    <input  onChange={ (e) => this.updateInput(e) } type='text' ></input>
+                    <input id='addCategoryInput' onChange={ (e) => this.updateInput(e) } type='text' ></input>
                     <button type='submit'>Add Category</button>
                 </form>
             </div>
@@ -28,6 +28,7 @@ class AddCategory extends React.Component {
     submitTodo = (e) => {
         e.preventDefault();
         this.props.addCategoryFn(this.state.category)
+        document.getElementById('addCategoryInput').value = ''
     }
 }
 
