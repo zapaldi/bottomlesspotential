@@ -1,4 +1,5 @@
 import React from 'react';
+import './todoCategory.css'
 
 class todoCategory extends React.Component {
     
@@ -8,14 +9,15 @@ class todoCategory extends React.Component {
         const { category } = this.props
         
         return (
-            <div>{category.text}</div>
+            <div className={ 'todoCategory' + (category.completed ? ' completed' : '')} onClick={this.strikeOutCategory}>{category.text}</div>
         )
             
     }
     
     strikeOutCategory = () => {
-        console.log('In todoCategory strikeOutCategory function')   
+        this.props.updateCategoryFn (this.props.category)
     }
+
 
 }
 

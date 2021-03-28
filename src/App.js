@@ -16,7 +16,7 @@ class App extends React.Component {
     return ( 
        <div> 
             <AddCategory addCategoryFn={this.addCategory} ></AddCategory>
-            <ListCategories categories={this.state.categories}></ListCategories>
+            <ListCategories updateCategoryFn={this.updateCategory} categories={this.state.categories}></ListCategories>
        </div> 
     );
   }
@@ -43,6 +43,24 @@ class App extends React.Component {
     console.log ('In addCategory function, this.state.categories are: ', this.state.categories)
   }
 
+
+  updateCategory = async ( category ) => {
+    const newCategories = this.state.categories.map (_category => {
+      if ( category === _category) 
+        return {
+          text: category.text,
+          completed: !category.completed
+      }
+      else { 
+        return _category
+      }
+    })
+    await this.setState({ categories: newCategories})
+    localStorage.setItem ('categories', JSON.stringify(this.state.categories) )
+//    console.log('In updateCategory newCategories are: ', newCategories)
+//    console.log('In updateCategory this.state.categories are: ', this.state.categories)
+    console.log('In categories in localStorage are: ', localStorage.getItem('categories'))
+  }
 }
 
 export default App;
