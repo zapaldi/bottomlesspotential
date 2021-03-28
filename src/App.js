@@ -22,7 +22,9 @@ class App extends React.Component {
   }
   
   componentDidMount = () => {
-    const categories = localStorage.getItem('categroies')
+    const categories = global.localStorage.getItem('categroies')
+    
+    console.log('Entered componentDidMount function')
     
     if ( categories ) {
         const savedCategories = JSON.parse ( categories )
@@ -39,7 +41,7 @@ class App extends React.Component {
       text: category,
       completed: false
     }] })
-    localStorage.setItem( 'categories', JSON.stringify(this.state.categories) )
+    global.localStorage.setItem( 'categories', JSON.stringify(this.state.categories) )
     console.log ('In addCategory function, this.state.categories are: ', this.state.categories)
   }
 
@@ -56,10 +58,10 @@ class App extends React.Component {
       }
     })
     await this.setState({ categories: newCategories})
-    localStorage.setItem ('categories', JSON.stringify(this.state.categories) )
+    global.localStorage.setItem ('categories', JSON.stringify(this.state.categories) )
 //    console.log('In updateCategory newCategories are: ', newCategories)
 //    console.log('In updateCategory this.state.categories are: ', this.state.categories)
-    console.log('In categories in localStorage are: ', localStorage.getItem('categories'))
+    console.log('In categories in localStorage are: ', global.localStorage.getItem('categories'))
   }
 }
 
