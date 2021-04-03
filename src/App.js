@@ -2,6 +2,11 @@ import React from 'react'
 import './App.css';
 import AddCategory from './AddCategory/addCategory'
 import ListCategories from './ListCategories/listCategories.js'
+import Amplify from 'aws-amplify'
+import awsconfig from './aws-exports'
+import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
+
+Amplify.configure(awsconfig)
 
 class App extends React.Component {
   
@@ -15,6 +20,7 @@ class App extends React.Component {
   render() {
     return ( 
        <div> 
+            <AmplifySignOut></AmplifySignOut>
             <AddCategory addCategoryFn={this.addCategory} ></AddCategory>
             <ListCategories updateCategoryFn={this.updateCategory} categories={this.state.categories}></ListCategories>
        </div> 
@@ -65,7 +71,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuthenticator(App);
 
 
 
