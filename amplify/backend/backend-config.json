@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "bottomlesspotentialc4099f26": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

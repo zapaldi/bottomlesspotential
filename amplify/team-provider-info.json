@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bottomlesspotential-dev-220608-authRole",
+      "UnauthRoleArn": "arn:aws:iam::952978590570:role/amplify-bottomlesspotential-dev-220608-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::952978590570:role/amplify-bottomlesspotential-dev-220608-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-bottomlesspotential-dev-220608-deployment",
+      "UnauthRoleName": "amplify-bottomlesspotential-dev-220608-unauthRole",
+      "StackName": "amplify-bottomlesspotential-dev-220608",
+      "StackId": "arn:aws:cloudformation:us-west-2:952978590570:stack/amplify-bottomlesspotential-dev-220608/cca2bf40-94c8-11eb-9de2-0a0cccf9a5fd",
+      "AmplifyAppId": "d3ng90d4hvha5p"
+    },
+    "categories": {
+      "auth": {
+        "bottomlesspotentialc4099f26": {}
+      }
+    }
+  }
+}
